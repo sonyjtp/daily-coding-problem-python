@@ -12,7 +12,7 @@ def is_num_in_numbers(k, nums):
     return matches
 
 
-def is_num_in_numbers_2(k, lst):  # dcp solution
+def is_num_in_numbers(k, lst):  # dcp solution
     for i in range(len(lst)):
         for j in range(len(lst)):
             if i != j and lst[i] + lst[j] == k:
