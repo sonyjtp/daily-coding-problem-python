@@ -5,6 +5,15 @@ import random
 # In other words, find the lowest positive integer that does not exist in the array.
 # The array can contain duplicates and negative numbers as well.
 
+
+def find_first_missing_2(nums):
+    s = set(nums)
+    i = 1
+    while i in s:
+        i += 1
+    return i
+
+
 def find_first_missing(nums):
     last_num = 0
     for num in nums:
@@ -16,7 +25,7 @@ def find_first_missing(nums):
             return last_num + 1
         else:
             last_num = num
-    return None
+    return last_num + 1
 
 
 def merge_sort(nums):
@@ -45,8 +54,9 @@ def merge_sort(nums):
             k += 1
 
 
-numbers = [random.randint(-3, 25) for x in range(1, 35)]
+numbers = [random.randint(-3, 25) for x in range(1, 100)]
 print(numbers)
 merge_sort(numbers)
 print(numbers)
 print(find_first_missing(numbers))
+print(find_first_missing_2(numbers))
